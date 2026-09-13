@@ -19,7 +19,7 @@
 ## 🌐 Demo en Vivo
 
 Puedes explorar el proyecto en producción a través del siguiente enlace:
-👉 **(https://miclosetumoda.netlify.app/)**
+👉 **https://miclosetumoda.netlify.app/**
 
 ## 💻 Instalación y Uso Local
 
@@ -39,7 +39,7 @@ Para correr este proyecto en tu entorno local, sigue estos pasos:
 
 **Andrés Felipe Carrillo Rincón**
 *Desarrollador Full Stack*
-*(https://andres-carrillo-cv.netlify.app/)*
+*https://andres-carrillo-cv.netlify.app/*
 
 ---
 *Si te gusta este proyecto, no olvides dejar una ⭐ en el repositorio.*
