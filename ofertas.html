@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ofertas especiales en MiClosetTuModa â Descuentos de hasta 40% en ropa para mujer, hombre y niÃ±os. Â¡Aprovecha antes de que terminen!">
+  <title>Ofertas Especiales â MiClosetTuModa</title>
+  <link rel="icon" type="image/png" href="imgs/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+  <main id="main-content">
+    <!-- âââââââââââââââ BANNER HERO OFERTAS âââââââââââââââ -->
+    <section class="hero-section" style="min-height:380px;" aria-label="Ofertas especiales">
+      <div class="hero-bg" style="background-image: url('imgs/Categorias/Mujeres.jpg'); opacity:0.2;"></div>
+      <div class="hero-overlay" style="background: linear-gradient(135deg, rgba(198,20,35,0.92) 0%, rgba(29,53,87,0.85) 100%);"></div>
+      <div class="container" style="position:relative; z-index:2; text-align:center;">
+        <div class="animate-fadeInUp">
+          <div class="hero-tag" style="justify-content:center; margin: 0 auto var(--space-5);">
+            <i class="fas fa-fire" aria-hidden="true"></i> Ofertas de Temporada
+          </div>
+          <h1 style="color: var(--clr-white); font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl)); margin-bottom: var(--space-3);">
+            Â¡Hasta <span style="color: #ffd166;">40% OFF</span>!
+          </h1>
+          <p style="color: rgba(255,255,255,0.85); font-size: var(--text-lg); margin-bottom: 0;">
+            Descuentos imperdibles en las mejores prendas de temporada
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- âââââââââââââââ COUNTDOWN âââââââââââââââ -->
+    <section class="countdown-section" aria-label="Tiempo restante de las ofertas">
+      <div class="container">
+        <div class="countdown-title">
+          <i class="fas fa-clock" aria-hidden="true"></i>
+          Las ofertas terminan en:
+        </div>
+        <div class="countdown-timer" role="timer" aria-label="Cuenta regresiva">
+          <div class="countdown-unit">
+            <span class="countdown-value" id="cd-days">00</span>
+            <span class="countdown-label">DÃ­as</span>
+          </div>
+          <span class="countdown-sep" aria-hidden="true">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-value" id="cd-hours">00</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <span class="countdown-sep" aria-hidden="true">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-value" id="cd-mins">00</span>
+            <span class="countdown-label">Min</span>
+          </div>
+          <span class="countdown-sep" aria-hidden="true">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-value" id="cd-secs">00</span>
+            <span class="countdown-label">Seg</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- âââââââââââââââ PRODUCTOS EN OFERTA âââââââââââââââ -->
+    <section style="padding: var(--space-16) 0 var(--space-20);" aria-labelledby="ofertas-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Ahorra ahora</span>
+          <h2 class="section-title" id="ofertas-title">Productos en Oferta</h2>
+          <div class="section-divider"><span></span></div>
+          <p class="section-subtitle">Calidad premium a precios imbatibles. Â¡Por tiempo limitado!</p>
+        </header>
+
+        <div class="filters-bar">
+          <div class="filter-chips" role="group" aria-label="Filtrar por secciÃ³n">
+            <button class="filter-chip active" data-filter="all" aria-pressed="true">Todas las Ofertas</button>
+            <button class="filter-chip" data-filter="mujer" aria-pressed="false">Mujer</button>
+            <button class="filter-chip" data-filter="hombre" aria-pressed="false">Hombre</button>
+            <button class="filter-chip" data-filter="ninos" aria-pressed="false">NiÃ±os</button>
+            <button class="filter-chip" data-filter="accesorios" aria-pressed="false">Accesorios</button>
+          </div>
+          <select class="sort-select" id="sort-select" aria-label="Ordenar ofertas">
+            <option value="default">Mayor descuento</option>
+            <option value="price-asc">Precio: Menor a Mayor</option>
+            <option value="price-desc">Precio: Mayor a Menor</option>
+          </select>
+        </div>
+
+        <div id="products-count" style="font-size:var(--text-sm); color:var(--text-muted); margin-bottom:var(--space-6);" aria-live="polite"></div>
+        <div class="products-grid" id="offers-grid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- âââââââââââââââ NEWSLETTER âââââââââââââââ -->
+    <section class="newsletter-section" aria-labelledby="newsletter-ofertas-title">
+      <div class="container newsletter-content">
+        <i class="newsletter-icon fas fa-tag" aria-hidden="true"></i>
+        <h2 id="newsletter-ofertas-title">Â¡No te pierdas ninguna oferta!</h2>
+        <p>SuscrÃ­bete y recibe los mejores descuentos directamente en tu correo.</p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" name="email" placeholder="Tu correo electrÃ³nico" required aria-label="Correo">
+          <button type="submit">Alertarme de Ofertas</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/services/ProductService.js"></script>
+  <script src="js/services/CartService.js"></script>
+  <script src="js/services/WishlistService.js"></script>
+  <script src="js/services/NotificationService.js"></script>
+  <script src="js/services/FilterService.js"></script>
+  <script src="js/components/HelpModal.js"></script>
+  <script src="js/components/Header.js"></script>
+  <script src="js/components/Footer.js"></script>
+  <script src="js/components/CartSidebar.js"></script>
+  <script src="js/components/SearchOverlay.js"></script>
+  <script src="js/components/ProductModal.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Header.render();
+      Footer.render();
+      CartService.init();
+      WishlistService.init();
+
+      // âââ Countdown timer âââ
+      // Fecha fin: 3 dÃ­as a partir de ahora
+      const endDate = new Date();
+      endDate.setDate(endDate.getDate() + 3);
+
+      function _updateCountdown() {
+        const now  = new Date();
+        const diff = endDate - now;
+
+        if (diff <= 0) {
+          document.getElementById('cd-days').textContent  = '00';
+          document.getElementById('cd-hours').textContent = '00';
+          document.getElementById('cd-mins').textContent  = '00';
+          document.getElementById('cd-secs').textContent  = '00';
+          return;
+        }
+
+        const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const mins  = Math.floor((diff / (1000 * 60)) % 60);
+        const secs  = Math.floor((diff / 1000) % 60);
+
+        const pad = (n) => String(n).padStart(2, '0');
+        document.getElementById('cd-days').textContent  = pad(days);
+        document.getElementById('cd-hours').textContent = pad(hours);
+        document.getElementById('cd-mins').textContent  = pad(mins);
+        document.getElementById('cd-secs').textContent  = pad(secs);
+      }
+
+      _updateCountdown();
+      setInterval(_updateCountdown, 1000);
+
+      // âââ Renderizar productos en oferta âââ
+      let _allOffers  = ProductService.getOffers();
+      let _currentSec = 'all';
+      let _currentSort = 'default';
+
+      function _render(products) {
+        const grid    = document.getElementById('offers-grid');
+        const countEl = document.getElementById('products-count');
+        if (!grid) return;
+
+        if (countEl) {
+          countEl.textContent = `${products.length} oferta${products.length !== 1 ? 's' : ''} disponible${products.length !== 1 ? 's' : ''}`;
+        }
+
+        if (products.length === 0) {
+          grid.innerHTML = `
+            <div style="grid-column:1/-1; text-align:center; padding:var(--space-20) 0; color:var(--text-muted)">
+              <i class="fas fa-tag" style="font-size:48px; opacity:0.2; display:block; margin-bottom:var(--space-4)"></i>
+              <p>No hay ofertas en esta secciÃ³n en este momento.</p>
+            </div>
+          `;
+          return;
+        }
+
+        grid.innerHTML = products.map((p, i) => {
+          const fmt  = ProductService.formatPrice;
+          const disc = ProductService.getDiscountPercent(p.price, p.priceOriginal);
+
+          return `
+            <article class="product-card hover-lift animate-fadeInUp" role="listitem"
+                     data-product-id="${p.id}" style="animation-delay:${(i % 4) * 100}ms">
+              <div class="product-card-img">
+                <span class="product-badge badge-sale" aria-label="Oferta">OFERTA</span>
+                <img src="${p.img}" alt="${p.name}" loading="lazy">
+                <div class="product-card-overlay" aria-hidden="true">
+                  <button class="overlay-btn quick-view-btn" data-id="${p.id}" aria-label="Vista rÃ¡pida">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="overlay-btn cart-overlay-btn" data-id="${p.id}" aria-label="AÃ±adir al carrito">
+                    <i class="fas fa-shopping-bag"></i>
+                  </button>
+                </div>
+                <button class="wishlist-btn" data-id="${p.id}"
+                        aria-label="AÃ±adir ${p.name} a lista de deseos"
+                        aria-pressed="${WishlistService.has(p.id)}">
+                  <i class="${WishlistService.has(p.id) ? 'fas' : 'far'} fa-heart" aria-hidden="true"></i>
+                </button>
+                <!-- Etiqueta de descuento prominente -->
+                <div style="position:absolute; top:var(--space-3); right:var(--space-3);
+                            background:var(--clr-primary); color:white;
+                            font-family:var(--font-heading); font-weight:var(--font-black);
+                            font-size:var(--text-lg); width:52px; height:52px;
+                            border-radius:50%; display:flex; align-items:center;
+                            justify-content:center; z-index:3; box-shadow:var(--shadow-primary);">
+                  -${disc}%
+                </div>
+              </div>
+              <div class="product-card-body">
+                <div class="product-card-category">${p.category} Â· ${p.section.charAt(0).toUpperCase() + p.section.slice(1)}</div>
+                <h3 class="product-card-name">${p.name}</h3>
+                <div class="product-card-price">
+                  <span class="price-current">${fmt(p.price)}</span>
+                  <span class="price-original">${fmt(p.priceOriginal)}</span>
+                  <span class="price-discount">-${disc}%</span>
+                </div>
+                <button class="btn-cart add-to-cart-btn" data-id="${p.id}"
+                        aria-label="AÃ±adir ${p.name} al carrito">
+                  <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+                  AÃ±adir al Carrito
+                </button>
+              </div>
+            </article>
+          `;
+        }).join('');
+
+        _bindEvents(grid);
+      }
+
+      function _applyFilters() {
+        let result = _currentSec === 'all'
+          ? _allOffers
+          : _allOffers.filter(p => p.section === _currentSec);
+        result = FilterService.sort(result, _currentSort);
+        _render(result);
+      }
+
+      function _bindEvents(container) {
+        container.querySelectorAll('.quick-view-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            ProductModal.open(parseInt(btn.dataset.id));
+          });
+        });
+        container.querySelectorAll('.product-card-img').forEach(el => {
+          el.addEventListener('click', (e) => {
+            if (e.target.closest('.wishlist-btn') || e.target.closest('.add-to-cart-btn')) return;
+            const card = e.target.closest('[data-product-id]');
+            if (card) ProductModal.open(parseInt(card.dataset.productId));
+          });
+        });
+        container.querySelectorAll('.cart-overlay-btn, .add-to-cart-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const id = parseInt(btn.dataset.id);
+            ProductModal.open(id);
+          });
+        });
+        container.querySelectorAll('.wishlist-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const id = parseInt(btn.dataset.id);
+            const product = ProductService.getById(id);
+            if (!product) return;
+            const added = WishlistService.toggle(product);
+            const icon = btn.querySelector('i');
+            btn.classList.toggle('active', added);
+            btn.setAttribute('aria-pressed', String(added));
+            if (icon) { icon.classList.toggle('far', !added); icon.classList.toggle('fas', added); }
+            NotificationService.wishlistToggled(added, product.name);
+          });
+        });
+      }
+
+      // Filtros por secciÃ³n
+      document.querySelectorAll('.filter-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          _currentSec = chip.dataset.filter;
+          document.querySelectorAll('.filter-chip').forEach(c => {
+            c.classList.remove('active');
+            c.setAttribute('aria-pressed', 'false');
+          });
+          chip.classList.add('active');
+          chip.setAttribute('aria-pressed', 'true');
+          _applyFilters();
+        });
+      });
+
+      // Sort
+      document.getElementById('sort-select').addEventListener('change', (e) => {
+        _currentSort = e.target.value;
+        _applyFilters();
+      });
+
+      // Newsletter
+      document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        NotificationService.success('Â¡SuscripciÃ³n exitosa!', 'Te avisaremos de las prÃ³ximas ofertas.');
+        e.target.reset();
+      });
+
+      // Render inicial
+      _render(_allOffers);
+    });
+  </script>
+</body>
+</html>

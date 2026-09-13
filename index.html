@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MiClosetTuModa â Tu tienda de moda online con las Ãºltimas tendencias en ropa para mujer, hombre y niÃ±os. EnvÃ­os a toda Colombia.">
+  <meta name="keywords" content="moda, ropa, tienda online, Colombia, mujer, hombre, niÃ±os, accesorios">
+  <meta name="author" content="MiClosetTuModa">
+  <meta property="og:title" content="MiClosetTuModa â Tu tienda de moda online">
+  <meta property="og:description" content="Las Ãºltimas tendencias en moda a precios increÃ­bles.">
+  <meta property="og:type" content="website">
+  <title>MiClosetTuModa â Tu tienda de moda online</title>
+  <link rel="icon" type="image/png" href="imgs/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* ââ Estilos especÃ­ficos del home ââ */
+    .hero-section { min-height: 620px; }
+    .hero-bg {
+      background-image: url('imgs/Categorias/Mujeres.jpg');
+      opacity: 0.3;
+    }
+
+    /* Grid categorÃ­as home */
+    .home-categories { padding: var(--space-20) 0; background: var(--bg-body); }
+    .category-grid-home {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+    }
+    .category-card { aspect-ratio: 3/4; }
+
+    @media (max-width: 1024px) {
+      .category-grid-home { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .category-grid-home { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+      .category-card { aspect-ratio: 2/3; }
+    }
+
+    /* Productos populares */
+    .popular-section {
+      padding: var(--space-20) 0;
+      background: var(--bg-surface);
+    }
+
+    /* Offers CTA section */
+    .offers-section { padding: var(--space-20) 0; background: var(--bg-body); }
+
+    /* Trust band */
+    .trust-section { padding: var(--space-5) 0; }
+
+    /* Newsletter */
+    .newsletter-home { padding: var(--space-20) 0; }
+  </style>
+
+</head>
+<body>
+  <!-- Header inyectado por JS -->
+
+  <main id="main-content">
+    <!-- âââââââââââââââ HERO âââââââââââââââ -->
+    <section class="hero-section" id="Inicio" aria-label="Banner principal">
+      <div class="hero-bg" role="img" aria-label="Modelo de moda"></div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-tag animate-fadeInDown">
+            <i class="fas fa-star" aria-hidden="true"></i>
+            Nueva ColecciÃ³n
+          </div>
+          <h1 class="hero-title">
+            Tu Estilo,<br><span>Tu Identidad</span>
+          </h1>
+          <p class="hero-subtitle">
+            Descubre las Ãºltimas tendencias en moda para mujer, hombre y niÃ±os.
+            Calidad premium al mejor precio.
+          </p>
+          <div class="hero-actions">
+            <a href="#categorias" class="btn btn-primary btn-lg ripple">
+              <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+              Explorar ColecciÃ³n
+            </a>
+            <a href="ofertas.html" class="btn btn-ghost btn-lg">
+              Ver Ofertas <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- âââââââââââââââ TRUST BAND âââââââââââââââ -->
+    <section class="trust-section" aria-label="Beneficios de compra">
+      <div class="trust-band">
+        <div class="container">
+          <div class="trust-grid">
+            <div class="trust-item">
+              <div class="trust-icon"><i class="fas fa-truck" aria-hidden="true"></i></div>
+              <div class="trust-text">
+                <strong>EnvÃ­o a Colombia</strong>
+                <span>Coordinamos tu pedido</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon"><i class="fas fa-undo" aria-hidden="true"></i></div>
+              <div class="trust-text">
+                <strong>Devoluciones fÃ¡ciles</strong>
+                <span>Hasta 30 dÃ­as</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+              <div class="trust-text">
+                <strong>Compra segura</strong>
+                <span>Pago verificado</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+              <div class="trust-text">
+                <strong>AtenciÃ³n por WhatsApp</strong>
+                <span>Respuesta inmediata</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- âââââââââââââââ CATEGORÃAS âââââââââââââââ -->
+    <section class="home-categories" id="categorias" aria-labelledby="categories-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">Explora</span>
+          <h2 class="section-title" id="categories-title">Nuestras CategorÃ­as</h2>
+          <div class="section-divider"><span></span></div>
+          <p class="section-subtitle">Encuentra exactamente lo que buscas en nuestras colecciones cuidadosamente seleccionadas</p>
+        </header>
+        <div class="category-grid-home">
+          <a href="mujer.html" class="category-card hover-lift" aria-label="Ir a secciÃ³n Mujer">
+            <img src="imgs/Categorias/Mujeres.jpg" alt="ColecciÃ³n Mujer" loading="lazy">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <div class="category-card-name">Mujer</div>
+              <div class="category-card-count">Vestidos, Blusas, Pantalones...</div>
+            </div>
+            <div class="category-card-arrow">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </div>
+          </a>
+          <a href="hombre.html" class="category-card hover-lift" aria-label="Ir a secciÃ³n Hombre">
+            <img src="imgs/Categorias/Hombres.jpg" alt="ColecciÃ³n Hombre" loading="lazy" style="object-position: center 70%">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <div class="category-card-name">Hombre</div>
+              <div class="category-card-count">Camisas, Pantalones, Chaquetas...</div>
+            </div>
+            <div class="category-card-arrow">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </div>
+          </a>
+          <a href="niÃ±os.html" class="category-card hover-lift" aria-label="Ir a secciÃ³n NiÃ±os">
+            <img src="imgs/Categorias/niÃ±os.jpg" alt="ColecciÃ³n NiÃ±os" loading="lazy">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <div class="category-card-name">NiÃ±os</div>
+              <div class="category-card-count">Conjuntos, Vestidos, Chaquetas...</div>
+            </div>
+            <div class="category-card-arrow">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </div>
+          </a>
+          <a href="accesorios.html" class="category-card hover-lift" aria-label="Ir a secciÃ³n Accesorios">
+            <img src="imgs/Categorias/Accesorios.jpg" alt="ColecciÃ³n Accesorios" loading="lazy">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <div class="category-card-name">Accesorios</div>
+              <div class="category-card-count">Bolsos, JoyerÃ­a, Gafas...</div>
+            </div>
+            <div class="category-card-arrow">
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- âââââââââââââââ PRODUCTOS POPULARES âââââââââââââââ -->
+    <section class="popular-section" id="Productos" aria-labelledby="popular-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-tag">MÃ¡s Vendidos</span>
+          <h2 class="section-title" id="popular-title">Productos Populares</h2>
+          <div class="section-divider"><span></span></div>
+          <p class="section-subtitle">Los favoritos de nuestros clientes esta temporada</p>
+        </header>
+        <div class="products-grid" id="popular-products-grid" role="list"></div>
+        <div style="text-align:center; margin-top: var(--space-10)">
+          <a href="mujer.html" class="btn btn-outline btn-lg">
+            Ver toda la colecciÃ³n <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- âââââââââââââââ OFERTAS CTA âââââââââââââââ -->
+    <section class="offers-section" aria-label="Ofertas especiales">
+      <div class="container">
+        <div class="offers-cta">
+          <div class="offers-cta-text">
+            <h2>Â¡Hasta 40% de descuento!</h2>
+            <p>Aprovecha nuestras ofertas por tiempo limitado en las mejores prendas de temporada.</p>
+          </div>
+          <a href="ofertas.html" class="btn btn-white btn-lg" style="flex-shrink:0">
+            <i class="fas fa-tag" aria-hidden="true"></i>
+            Ver todas las ofertas
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- âââââââââââââââ NEWSLETTER âââââââââââââââ -->
+    <section class="newsletter-section newsletter-home" aria-labelledby="newsletter-title">
+      <div class="container newsletter-content">
+        <i class="newsletter-icon fas fa-envelope-open-text" aria-hidden="true"></i>
+        <h2 id="newsletter-title">SuscrÃ­bete y recibe ofertas exclusivas</h2>
+        <p>SÃ© el primero en conocer las Ãºltimas tendencias y descuentos especiales.</p>
+        <form class="newsletter-form" id="newsletter-form" aria-label="Formulario de suscripciÃ³n">
+          <input type="email" name="email" placeholder="Tu correo electrÃ³nico"
+                 required aria-label="Correo electrÃ³nico" aria-required="true">
+          <button type="submit">
+            Suscribirse <i class="fas fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer inyectado por JS -->
+
+  <!-- âââââââââââââââ SCRIPTS âââââââââââââââ -->
+  <script src="js/services/ProductService.js"></script>
+  <script src="js/services/CartService.js"></script>
+  <script src="js/services/WishlistService.js"></script>
+  <script src="js/services/NotificationService.js"></script>
+  <script src="js/services/FilterService.js"></script>
+  <script src="js/components/HelpModal.js"></script>
+  <script src="js/components/Header.js"></script>
+  <script src="js/components/Footer.js"></script>
+  <script src="js/components/CartSidebar.js"></script>
+  <script src="js/components/SearchOverlay.js"></script>
+  <script src="js/components/ProductModal.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Header.render();
+      Footer.render();
+      CartService.init();
+      WishlistService.init();
+      _renderPopularProducts();
+
+      document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        NotificationService.success(
+          'Â¡SuscripciÃ³n exitosa!',
+          `Te registramos con ${email}. Â¡Bienvenido!`
+        );
+        e.target.reset();
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+          const target = document.querySelector(a.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
+
+    function _renderPopularProducts() {
+      const grid = document.getElementById('popular-products-grid');
+      if (!grid) return;
+
+      const popular = [
+        ProductService.getById(1),
+        ProductService.getById(8),
+        ProductService.getById(12),
+        ProductService.getById(3),
+        ProductService.getById(23),
+        ProductService.getById(16),
+        ProductService.getById(25),
+        ProductService.getById(14),
+      ].filter(Boolean);
+
+      grid.innerHTML = popular.map(p => _buildProductCard(p)).join('');
+      _bindCardEvents(grid);
+    }
+
+    function _buildProductCard(p) {
+      const fmt  = ProductService.formatPrice;
+      const disc = p.priceOriginal
+        ? ProductService.getDiscountPercent(p.price, p.priceOriginal)
+        : 0;
+      const badgeMap = { 'NUEVO': 'badge-new', 'OFERTA': 'badge-sale', 'HOT': 'badge-hot' };
+      const badgeClass = p.badge ? badgeMap[p.badge] || 'badge-new' : '';
+
+      return `
+        <article class="product-card hover-lift animate-fadeInUp" role="listitem"
+                 data-product-id="${p.id}">
+          <div class="product-card-img">
+            ${p.badge ? `<span class="product-badge ${badgeClass}" aria-label="${p.badge}">${p.badge}</span>` : ''}
+            <img src="${p.img}" alt="${p.name}" loading="lazy">
+            <div class="product-card-overlay" aria-hidden="true">
+              <button class="overlay-btn quick-view-btn" data-id="${p.id}"
+                      aria-label="Vista rÃ¡pida de ${p.name}">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="overlay-btn wishlist-overlay-btn" data-id="${p.id}"
+                      aria-label="AÃ±adir ${p.name} a lista de deseos">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <button class="wishlist-btn" data-id="${p.id}"
+                    aria-label="AÃ±adir ${p.name} a lista de deseos">
+              <i class="far fa-heart" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-category">${p.category}</div>
+            <h3 class="product-card-name">${p.name}</h3>
+            <div class="product-card-price">
+              <span class="price-current">${fmt(p.price)}</span>
+              ${p.priceOriginal ? `
+                <span class="price-original">${fmt(p.priceOriginal)}</span>
+                <span class="price-discount">-${disc}%</span>
+              ` : ''}
+            </div>
+            <button class="btn-cart add-to-cart-btn" data-id="${p.id}"
+                    aria-label="AÃ±adir ${p.name} al carrito">
+              <i class="fas fa-shopping-bag" aria-hidden="true"></i>
+              AÃ±adir al Carrito
+            </button>
+          </div>
+        </article>
+      `;
+    }
+
+    function _bindCardEvents(container) {
+      container.querySelectorAll('.product-card-img').forEach(el => {
+        el.addEventListener('click', (e) => {
+          if (e.target.closest('.add-to-cart-btn') || e.target.closest('.wishlist-btn')) return;
+          const card = e.target.closest('[data-product-id]');
+          if (card) ProductModal.open(parseInt(card.dataset.productId));
+        });
+      });
+
+      container.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const id = parseInt(btn.dataset.id);
+          ProductModal.open(id);
+        });
+      });
+
+      container.querySelectorAll('.wishlist-btn, .wishlist-overlay-btn').forEach(btn => {
+        const id = parseInt(btn.dataset.id);
+        if (WishlistService.has(id)) {
+          btn.classList.add('active');
+          const icon = btn.querySelector('i');
+          if (icon) { icon.classList.remove('far'); icon.classList.add('fas'); }
+        }
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const product = ProductService.getById(id);
+          if (!product) return;
+          const added = WishlistService.toggle(product);
+          const icon = btn.querySelector('i');
+          btn.classList.toggle('active', added);
+          if (icon) {
+            icon.classList.toggle('far', !added);
+            icon.classList.toggle('fas', added);
+          }
+          NotificationService.wishlistToggled(added, product.name);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

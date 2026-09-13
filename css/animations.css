@@ -1,0 +1,201 @@
+/* ============================================================
+   MiClosetTuModa — Animations
+   Keyframes y clases de animación para toda la app
+   ============================================================ */
+
+/* ─── Keyframes ─── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100%); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(100%); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.08); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  30%       { transform: translateY(-8px); }
+  60%       { transform: translateY(-4px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14%       { transform: scale(1.3); }
+  28%       { transform: scale(1); }
+  42%       { transform: scale(1.3); }
+  70%       { transform: scale(1); }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes countdownPulse {
+  0%, 100% { transform: scale(1); color: inherit; }
+  50%       { transform: scale(1.05); color: var(--clr-primary); }
+}
+
+/* ─── Clases de animación ─── */
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease backwards;
+}
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+.animate-fadeInDown {
+  animation: fadeInDown 0.4s ease backwards;
+}
+.animate-scaleIn   { animation: scaleIn 0.3s ease both; }
+.animate-slideRight{ animation: slideInRight 0.4s ease both; }
+.animate-pulse     { animation: pulse 2s ease-in-out infinite; }
+.animate-bounce    { animation: bounce 0.6s ease; }
+.animate-spin      { animation: spin 1s linear infinite; }
+.animate-heartbeat { animation: heartbeat 1.3s ease-in-out infinite; }
+
+/* Delays para entradas escalonadas */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ─── Skeleton Loader ─── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--clr-gray-200) 25%,
+    var(--clr-gray-100) 50%,
+    var(--clr-gray-200) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+.skeleton-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.skeleton-img {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(
+    90deg,
+    var(--clr-gray-200) 25%,
+    var(--clr-gray-100) 50%,
+    var(--clr-gray-200) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-line {
+  height: 14px;
+  margin: var(--space-3) var(--space-4);
+  background: linear-gradient(
+    90deg,
+    var(--clr-gray-200) 25%,
+    var(--clr-gray-100) 50%,
+    var(--clr-gray-200) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-line.short { width: 60%; }
+.skeleton-line.medium{ width: 80%; }
+.skeleton-line.full  { width: 100%; }
+
+/* ─── Gradiente animado (hero, banners) ─── */
+.gradient-animated {
+  background: linear-gradient(
+    270deg,
+    var(--clr-primary-dark),
+    var(--clr-secondary),
+    var(--clr-accent),
+    var(--clr-primary)
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* ─── Hover lift ─── */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ─── Ripple efecto ─── */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s, opacity 0.5s;
+  opacity: 0;
+}
+.ripple:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+}
